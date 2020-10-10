@@ -1,0 +1,70 @@
+{% set catalogCards = [
+    {
+        name: 'Робинзон Крузо',
+        engName: 'Robinsone Crusoe',
+        type: 'Набор жетонов',
+        labels: {
+            new: true,
+            hit: false
+        },
+        price: '1100'
+    },{
+        name: 'Двери',
+        engName: '',
+        type: 'Ресурсы',
+        labels: {
+            new: true,
+            hit: false
+        },
+        price: '200'
+    },{
+        name: 'Серп',
+        engName: 'Scythe',
+        type: 'Набор миниматюр',
+        labels: {
+            new: false,
+            hit: false
+        },
+        price: '2590',
+        oldPrice: '3390'
+    },{
+        name: 'Особняки Безумия',
+        engName: 'Mansions of Madness',
+        type: 'Набор миниматюр',
+        labels: {
+            new: false,
+            hit: true
+        },
+        price: '2800'
+    }
+] %}
+
+{% for item in catalogCards %}
+    <li class="card__item card">
+        <img src="" alt="" class="card__img">
+
+        <a href="/catalog/category/item/" class="card__link">
+            <h3 class="card__heading">
+                <span class="card__type">{{ item.type }}</span>
+                {{ item.name }}
+            </h3>
+            <p class="card__eng">{{ item.engName }}</p>
+        </a>
+
+        {% if item.labels.new or item.labels.hit %}
+            <div class="card__labels labels">
+                {% if item.labels.new %}
+                    <p class="labels__item labels__item_new">Новинка</p>
+                {% endif %}
+                {% if item.labels.hit %}
+                    <p class="labels__item labels__item_hit">Хит</p>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        <p class="card__price">{{ item.price }} рублей</p>
+        {% if item.oldPrice %}
+            <p class="card__price card__price_old"><span class="visually-hidden">Цена до скидки: </span>{{ item.oldPrice }} рублей</p>
+        {% endif %}
+    </li>
+{% endfor %}

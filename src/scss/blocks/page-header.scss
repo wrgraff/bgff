@@ -1,0 +1,9 @@
+.page-header {
+    padding: 40px;
+    background-color: $color-secondary;
+}
+
+.page-header__nav {
+    max-width: $page-max-width;
+    margin: 0 auto;
+}

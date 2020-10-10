@@ -1,12 +1,12 @@
 body {
     min-width: 320px;
 
-    font-family: $font-family, 'Helvetica Neue', 'Segoe UI', sans-serif;
+    font-family: $font-family, sans-serif;
     line-height: 1.5;
 }
 
 a {
-    color: $primary-color;
+    color: $color-primary;
 
     text-decoration: none;
 
@@ -17,7 +17,7 @@ a {
     }
 
     &:hover {
-        color: $secondary-color;
+        color: $color-secondary;
     }
 
     &:focus {

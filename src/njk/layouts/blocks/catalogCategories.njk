@@ -1,0 +1,24 @@
+{% set catalogCategories = [
+    {
+        name: "Комплекты для настольных игр",
+        link: 'complects'
+    },{
+        name: "Монеты",
+        link: 'coins'
+    },{
+        name: "Ресурсы",
+        link: 'resources'
+    },{
+        name: "Органайзеры и планшеты",
+        link: 'organizers'
+    },{
+        name: "Печать на заказ",
+        link: 'print'
+    }
+] %}
+
+{% for item in catalogCategories %}
+    <li class="categories__item">
+        <a href="/{{ item.link }}/" class="categories__link categories__link_{{ item.link }}">{{ item.name }}</a>
+    </li>
+{% endfor %}

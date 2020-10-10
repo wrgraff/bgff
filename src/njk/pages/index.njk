@@ -1,3 +1,4 @@
+{% set name = 'Board Games For Fun: Миниатюры для настольных игр' %}
 {% set title = 'Board Games For Fun: Миниатюры для настольных игр' %}
 {% set description = 'Board Games For Fun: Миниатюры для настольных игр' %}
 {% set keywords = 'Board Games For Fun: Миниатюры для настольных игр' %}
@@ -6,5 +7,34 @@
 {% extends '../layouts/index.njk' %}
 
 {% block content %}
-    <h1>BGFF</h1>
+    <h1 class="visually-hidden">Board Games For Fun: Миниатюры для настольных игр</h1>
+
+    <section class="promo">
+        <h2 class="visually-hidden">Разделы каталога</h2>
+        <p class="promo__heading">Создаём неповторимые впечатления от вашей любимой настольной игры</p>
+
+        <ul class="promo__list categories">
+            {% include "../layouts/blocks/catalogCategories.njk" %}
+        </ul>
+    </section>
+
+    <section class="advantages">
+        <h2 class="visually-hidden">Наши преимущества</h2>
+        
+        <ol class="advantages__list">
+            <li class="advantages__item">Миниатюры выполнены на фотополимерном принтере высокого разрешения</li>
+            <li class="advantages__item">Срок исполнения — от 3 до 7 дней, в зависимости от объема и текущей загрузки</li>
+            <li class="advantages__item">При заказе от двух наборов миниатюр — бесплатная доставка по Санкт-Петербургу</li>
+        </ol>
+    </section>
+
+    <section class="popular">
+        <h2 class="visually-hidden">Популярные товары</h2>
+
+        <ul class="popular__list cards">
+            {% include "../layouts/blocks/catalogCards.njk" %}
+        </ul>
+
+        <a href="/catalog/" class="popular__all-link button">Весь каталог</a>
+    </section>
 {% endblock %}

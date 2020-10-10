@@ -37,11 +37,13 @@
 </head>
 
 <body class="page">
-    <header class="page__header page-header">
-        {% include "blocks/page-header.njk" %}
-    </header>
+    {% include "blocks/page-header.njk" %}
 
     <main class="page__main page-main">
+        {% if activePage != '/' %}
+            {% include "blocks/breadcrumbs.njk" %}
+        {% endif %}
+
         {% block content %}
         {% endblock %}
     </main>

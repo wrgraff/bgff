@@ -1,0 +1,15 @@
+<ul class="page-body__breadcrumbs breadcrumbs">
+    <li class="breadcrumbs__item">
+        <a href="/" class="breadcrumbs__link">Главная</a>
+    </li>
+
+    {% for item in breadcrumbs %}
+        <li class="breadcrumbs__item">
+            <a href="{{ breadcrumbs.link }}" class="breadcrumbs__link">{{ breadcrumbs.name }}</a>
+        </li>
+    {% endfor %}
+
+    <li class="breadcrumbs__item">
+        {{ name }}
+    </li>
+</ul>
