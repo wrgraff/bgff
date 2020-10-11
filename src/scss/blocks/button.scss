@@ -1,0 +1,67 @@
+.button {
+    position: relative;
+    z-index: 0;
+
+    display: inline-block;
+    min-width: 217px;
+    padding: 12px 24px 13px;
+
+    color: $color-primary;
+    background-color: $color-cream;
+    border: none;
+    border-radius: 3px;
+
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+
+    transition: color 250ms, background-color 250ms;
+
+    &::after {
+        content: '';
+
+        position: absolute;
+        top: 0;
+        right: 7px;
+        bottom: -6px;
+        left: 7px;
+        z-index: -1;
+
+        background-color: inherit;
+        border-radius: 3px;
+        opacity: .5;
+
+        transition: top 250ms, right 250ms, bottom 250ms, left 250ms;
+        will-change: top, right, bottom, left;
+    }
+
+    &:hover {
+        color: $color-secondary;
+        background-color: lighten($color-cream, 15%);
+    }
+
+    &:focus {
+        outline: none;
+
+        &::after {
+            top: -6px;
+            right: -6px;
+            left: -6px;
+        }
+    }
+
+    &:active {
+        background-color: darken($color-cream, 5%);
+
+        &::after {
+            top: 0;
+            right: 3px;
+            left: 3px;
+            bottom: -3px;
+        }
+    }
+}

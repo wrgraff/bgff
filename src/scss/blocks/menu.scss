@@ -1,0 +1,14 @@
+.menu {
+    padding: 0;
+    list-style: none;
+}
+
+.menu__link {
+    display: block;
+    padding: 8px 10px;
+
+    color: $color-secondary;
+    border-radius: 3px;
+
+    font-weight: 600;
+}
