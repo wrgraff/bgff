@@ -1,9 +1,9 @@
 {
     "lang": "ru",
     "dir": "ltr",
-    "name": "Board Games For Fun",
-    "short_name": "Board Games For Fun",
-    "description": "Board Games For Fun: Миниатюры для настольных игр",
+    "name": "Board Game For Fun",
+    "short_name": "Board Game For Fun",
+    "description": "Board Game For Fun: Миниатюры для настольных игр",
     "icons": [{
             "src": "/static/img/favicons/android-chrome-192x192.png",
             "sizes": "192x192",
