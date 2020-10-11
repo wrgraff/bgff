@@ -1,0 +1,19 @@
+.logo {
+    padding: 8px;
+
+    border-radius: 3px;
+
+    transition: background-color 250ms;
+
+    &:hover {
+        background-color: $color-white;
+    }
+
+    &:focus {
+        background-color: $color-white;
+    }
+}
+
+.logo__img {
+    display: block;
+}

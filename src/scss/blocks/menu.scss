@@ -4,11 +4,17 @@
 }
 
 .menu__link {
-    display: block;
+    display: inline-block;
     padding: 8px 10px;
 
     color: $color-secondary;
     border-radius: 3px;
 
     font-weight: 600;
+
+    transition: background-color 250ms;
+
+    &:hover {
+        background-color: $color-white;
+    }
 }

@@ -21,47 +21,89 @@
 
     transition: color 250ms, background-color 250ms;
 
+    &::before,
     &::after {
         content: '';
 
         position: absolute;
         top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+
+        border-radius: 3px;
+        background-color: $color-cream;
+
+        transition: background-color 250ms;
+    }
+
+    &::after {
         right: 7px;
         bottom: -6px;
         left: 7px;
-        z-index: -1;
+        z-index: -2;
 
         background-color: inherit;
-        border-radius: 3px;
         opacity: .5;
 
-        transition: top 250ms, right 250ms, bottom 250ms, left 250ms;
+        transition:
+            top 250ms,
+            right 250ms,
+            bottom 250ms,
+            left 250ms,
+            background-color 250ms,
+            opacity 250ms;
         will-change: top, right, bottom, left;
     }
 
     &:hover {
         color: $color-secondary;
         background-color: lighten($color-cream, 15%);
+
+        &::before {
+            background-color: lighten($color-cream, 15%);
+        }
     }
 
     &:focus {
         outline: none;
 
         &::after {
-            top: -6px;
-            right: -6px;
-            left: -6px;
+            top: -4px;
+            right: -4px;
+            bottom: -4px;
+            left: -4px;
+
+            opacity: 1;
+            background-color: $color-primary;
+
+            transition:
+                top 250ms,
+                right 250ms,
+                bottom 250ms,
+                left 250ms,
+                background-color 100ms ease-in 120ms,
+                opacity 100ms ease-in 120ms;
+            will-change: top, right, bottom, left;
         }
     }
 
     &:active {
         background-color: darken($color-cream, 5%);
 
+        &::before {
+            background-color: darken($color-cream, 5%);
+        }
+
         &::after {
             top: 0;
             right: 3px;
             left: 3px;
             bottom: -3px;
+
+            opacity: .5;
+            background-color: inherit;
         }
     }
 }

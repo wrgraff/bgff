@@ -1,7 +1,7 @@
 @mixin outline($inset: false) {
-    outline-width: 2px;
+    outline-width: 3px;
     outline-style: solid;
-    outline-color: rgba($color-primary, .5);
+    outline-color: $color-primary;
 
     @if ($inset == 'inset') {
         outline-offset: -2px;
