@@ -1,4 +1,4 @@
-{% set name = 'Board Games For Fun: Миниатюры для настольных игр' %}
+{% set pageName = 'Board Games For Fun: Миниатюры для настольных игр' %}
 {% set title = 'Board Games For Fun: Миниатюры для настольных игр' %}
 {% set description = 'Board Games For Fun: Миниатюры для настольных игр' %}
 {% set keywords = 'Board Games For Fun: Миниатюры для настольных игр' %}
@@ -14,7 +14,7 @@
         <p class="promo__heading">Создаём неповторимые впечатления от вашей любимой настольной игры</p>
 
         <ul class="promo__list categories">
-            {% include "../layouts/blocks/catalogCategories.njk" %}
+            {% include '../layouts/blocks/catalog-categories.njk' %}
         </ul>
     </section>
 
@@ -32,9 +32,18 @@
         <h2 class="visually-hidden">Популярные товары</h2>
 
         <ul class="popular__list cards">
-            {% include "../layouts/blocks/catalogCards.njk" %}
+            {% set cardsCounter = 4 %}
+            {% include '../layouts/blocks/catalog-cards.njk' %}
         </ul>
 
         <a href="/catalog/" class="popular__all-link button">Весь каталог</a>
+    </section>
+
+    <section class="gallery">
+        <h2 class="visually-hidden">Наши работы</h2>
+
+        <ul class="gallery__list">
+            {% include '../layouts/blocks/gallery-items.njk' %}
+        </ul>
     </section>
 {% endblock %}

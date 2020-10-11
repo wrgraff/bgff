@@ -1,0 +1,20 @@
+{% set gallery = [
+    {
+        name: 'Миниатюры для Спартака',
+        link: '/catalog/category/item/'
+    },{
+        name: 'Миниатюры для Mice and Mystics',
+        link: '/catalog/category/item/'
+    },{
+        name: 'Альтернативные жетоны садов и поддержки для Root',
+        link: '/catalog/category/item/'
+    }
+] %}
+
+{% for item in gallery %}
+    <li class="gallery__item">
+        <img src="" alt="{{ item.name }}" class="gallery__img">
+        <h3 class="gallery__heading">{{ item.name }}</h3>
+        <a href="{{ item.link }}" class="gallery__button button">Хочу такую!</a>
+    </li>
+{% endfor %}

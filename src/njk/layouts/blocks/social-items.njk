@@ -1,0 +1,17 @@
+{% set social = [
+    {
+        name: 'В контакте',
+        link: 'https://vk.com/boardgameforfun',
+        ico: 'vk'
+    },{
+        name: 'Instagram',
+        link: 'https://www.instagram.com/boardgameforfun/',
+        ico: 'instagram'
+    }
+] %}
+
+{% for item in social %}
+    <li class="social__item">
+        <a href="/{{ item.link }}/" class="social__link social__link_{{ item.ico }}" target="_blank">{{ item.name }}</a>
+    </li>
+{% endfor %}

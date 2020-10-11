@@ -1,0 +1,109 @@
+{% set pageName = 'Набор жетонов Робинзон Крузо' %}
+{% set title = 'Набор жетонов Робинзон Крузо | BGFF' %}
+{% set description = '' %}
+{% set keywords = '' %}
+{% set activePage = 'item' %}
+{% set breadcrumbs = [
+    {
+        name: 'Каталог',
+        link: 'catalog'
+    },{
+        name: 'Комплекты для настольных игр',
+        link: 'complects'
+    }
+] %}
+
+{% extends '../layouts/index.njk' %}
+
+{% block content %}
+    <h1 class="visually-hidden">{{ pageName }}</h1>
+
+    <section class="catalog-gallery">
+        <h2 class="visually-hidden">Фото</h2>
+
+        <a href="#" class="catalog-gallery__view">
+            <img src="" alt="{{ pageName }}" class="catalog-gallery__view-img">
+        </a>
+
+        <h3 class="visually-hidden">Список фото товара</h3>
+        <ul class="catalog-gallery__list">
+            <li class="catalog-gallery__item catalog-gallery__item_active">
+                <a href="#" class="catalog-gallery__link">
+                    <img src="" alt="" class="catalog-gallery__img">
+                </a>
+            </li>
+            <li class="catalog-gallery__item">
+                <a href="#" class="catalog-gallery__link">
+                    <img src="" alt="" class="catalog-gallery__img">
+                </a>
+            </li>
+            <li class="catalog-gallery__item">
+                <a href="#" class="catalog-gallery__link">
+                    <img src="" alt="" class="catalog-gallery__img">
+                </a>
+            </li>
+            <li class="catalog-gallery__item">
+                <a href="#" class="catalog-gallery__link">
+                    <img src="" alt="" class="catalog-gallery__img">
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <section class="catalog-info">
+        <h2 class="visually-hidden">Информация о товаре</h2>
+
+        <p class="catalog-info__heading">
+            <span class="catalog-info__type">Набор жетонов</span>
+            Робинзон Крузо
+            <span class="catalog-info__eng">Robinsone Crusoe</span>
+        </p>
+
+        <h3 class="catalog-info__heading">В набор входит:</h3>
+        <ul class="catalog-info__list equipment">
+            <li class="equipment__item">
+                Жетон убежища <span class="equipment__counter">— 1 шт.</span>
+            </li>
+            <li class="equipment__item">
+                Жетон крыши <span class="equipment__counter">— 1 шт.</span>
+            </li>
+            <li class="equipment__item">
+                Жетон забора <span class="equipment__counter">— 1 шт.</span>
+            </li>
+            <li class="equipment__item">
+                Жетон оружия <span class="equipment__counter">— 1 шт.</span>
+            </li>
+            <li class="equipment__item">
+                Жетон костра <span class="equipment__counter">— 1 шт.</span>
+            </li>
+            <li class="equipment__item">
+                Жетон морали <span class="equipment__counter">— 1 шт.</span>
+            </li>
+            <li class="equipment__item">
+                Жетон тропы <span class="equipment__counter">— 1 шт.</span>
+            </li>
+        </ul>
+
+        <p class="catalog-info__price">1 000 ₽</p>
+
+        <a href="/order/" class="catalog-info__button button">Заказать</a>
+    </section>
+
+    <section class="catalog-additional">
+        <h2 class="catalog-additional__heading">Еще для игры Робинзон Крузо:</h2>
+
+        <ul class="catalog-additional__list cards">
+            {% set cardsCounter = 2 %}
+            {% include '../layouts/blocks/catalog-cards.njk' %}
+        </ul>
+    </section>
+
+    <section class="catalog-additional">
+        <h2 class="catalog-additional__heading">Наборы для других игр:</h2>
+
+        <ul class="catalog-additional__list cards">
+            {% set cardsCounter = 4 %}
+            {% include '../layouts/blocks/catalog-cards.njk' %}
+        </ul>
+    </section>
+{% endblock %}

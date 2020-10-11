@@ -1,0 +1,15 @@
+{% set pageName = 'Каталог' %}
+{% set title = 'Каталог | BGFF' %}
+{% set description = '' %}
+{% set keywords = '' %}
+{% set activePage = 'catalog' %}
+
+{% extends '../layouts/index.njk' %}
+
+{% block content %}
+    <h1 class="page-main__heading">{{ pageName }}</h1>
+
+    <ul class="categories">
+        {% include '../layouts/blocks/catalog-categories.njk' %}
+    </ul>
+{% endblock %}

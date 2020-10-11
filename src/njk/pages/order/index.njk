@@ -1,0 +1,132 @@
+{% set pageName = 'Оформление заказа' %}
+{% set title = 'Оформление заказа | BGFF' %}
+{% set description = '' %}
+{% set keywords = '' %}
+{% set activePage = 'order' %}
+
+{% extends '../layouts/index.njk' %}
+
+{% block content %}
+    <h1 class="page-main__heading">{{ pageName }}</h1>
+
+    <form action="/order/response/" class="order">
+        <section class="order__contacts">
+            <h2 class="order__heading">Контактные данные</h2>
+            <p class="order__text">Нам понадобятся ваши контакты, чтобы мы связались с вами, если понадобится уточнить какие-то детали заказа</p>
+
+            <label class="order__field field">
+                <p class="field__text">Имя <span class="field__comment">Обязательное поле</span></p>
+                <input name="name" type="text" class="field__input" placeholder="Бруно Катала" required>
+            </label>
+
+            <label class="order__field field">
+                <p class="field__text">Телефон</p>
+                <input name="phone" type="tel" class="field__input" placeholder="8 987 123-45-67">
+            </label>
+
+            <label class="order__field field">
+                <p class="field__text">Электронная почта <span class="field__comment">Обязательное поле</span></p>
+                <input name="email" type="email" class="field__input" placeholder="name@mailbox.ru" required>
+            </label>
+        </section>
+
+        <section class="order__address">
+            <h2 class="order__heading">Адрес</h2>
+            <p class="order__text">Чтобы мы смогли выслать заказ как можно быстрее, сообщите нам адрес</p>
+
+            <label class="order__field field">
+                <p class="field__text">Индекс</p>
+                <input name="index" type="number" class="field__input" placeholder="100500">
+            </label>
+
+            <label class="order__field field">
+                <p class="field__text">Город</p>
+                <input name="city" type="text" class="field__input" placeholder="Санкт-Петербург">
+            </label>
+
+            <label class="order__field field">
+                <p class="field__text">Улица</p>
+                <input name="street" type="text" class="field__input" placeholder="Невский проспект">
+            </label>
+
+            <label class="order__field field">
+                <p class="field__text">Дом</p>
+                <input name="house" type="number" class="field__input" placeholder="10">
+            </label>
+
+            <label class="order__field field">
+                <p class="field__text">Корпус</p>
+                <input name="building" type="text" class="field__input" placeholder="1">
+            </label>
+
+            <label class="order__field field">
+                <p class="field__text">Квартира</p>
+                <input name="apartment" type="text" class="field__input" placeholder="29">
+            </label>
+        </section>
+
+        <section class="order__equipment">
+            <h2 class="visually-hidden">Состав заказа</h2>
+
+            <div class="order__card card">
+                <img src="" alt="" class="card__img">
+
+                <a href="/catalog/complects/item/" class="card__link">
+                    <h3 class="card__heading">
+                        <span class="card__type">Набор жетонов</span>
+                        Робинзон Крузо
+                    </h3>
+                    <p class="card__eng">Robinsone Crusoe</p>
+                </a>
+
+                <div class="card__labels labels">
+                    <p class="labels__item labels__item_new">Новинка</p>
+                </div>
+
+                <p class="card__price">1100 рублей</p>
+            </div>
+
+            <div class="order__total total">
+                <h3 class="total__heading">Количество и цена:</h3>
+
+                <label class="total__label">
+                    <span class="visually-hidden">Количество</span>
+                    <input name="counter" type="number" class="total__input">
+                </label>
+                <p class="total__price"><span class="visually-hidden">Цена: </span> 1 100 ₽</p>
+                <p class="total__sum"><span class="visually-hidden">Итого:</span> 2 200 ₽</p>
+                <p class="total__comment">Всё надежно, оплата производится через сервис Яндекс.Деньги</p>
+            </div>
+        </section>
+
+        <section class="order__payment payment">
+            <h2 class="order__heading">Выберите способ оплаты</h2>
+
+            <ul class="payment__list">
+                <li class="payment__item">
+                    <label class="payment__checkbox payment__checkbox_card">
+                        <input name="payment" type="radio" value="bank" class="payment__input">
+                        <h3 class="payment__title">Банковская карта</h3>
+                        <p class="payment__text">Оплата через ваш любимый банк</p>
+                    </label>
+                </li>
+                <li class="payment__item">
+                    <label class="payment__checkbox payment__checkbox_yomoney">
+                        <input name="payment" type="radio" value="yomoney" class="payment__input">
+                        <h3 class="payment__title">Яндекс.Деньги</h3>
+                        <p class="payment__text">Оплата через кошелек</p>
+                    </label>
+                </li>
+                <li class="payment__item">
+                    <label class="payment__checkbox payment__checkbox_phone">
+                        <input name="payment" type="radio" value="phone" class="payment__input">
+                        <h3 class="payment__title">Через телефон</h3>
+                        <p class="payment__text">Оплата с баланса мобильного оператора</p>
+                    </label>
+                </li>
+            </ul>
+        </section>
+
+        <button type="submit" class="order__button button">Перейти к оплате</button>
+    </form>
+{% endblock %}

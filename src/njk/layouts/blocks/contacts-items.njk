@@ -1,0 +1,30 @@
+{% set contacts = [
+    {
+        name: '+7 (921) 856-23-04',
+        link: 'tel:+79218562304',
+        ico: 'phone'
+    },{
+        name: 'Санкт-Петербург',
+        ico: 'address'
+    },{
+        name: 'boardgamesforfun',
+        link: 'https://vk.com/boardgameforfun',
+        ico: 'vk'
+    },{
+        name: 'boardgamesforfun',
+        link: 'https://www.instagram.com/boardgameforfun/',
+        ico: 'instagram'
+    }
+] %}
+
+{% for item in contacts %}
+    {% if item.link %}
+        <li class="contacts__item">
+            <a href="/{{ item.link }}/" class="contacts__link contacts__link_{{ item.ico }}">{{ item.name }}</a>
+        </li>
+    {% elif not contactsOnlyLinks %}
+        <li class="contacts__item">
+            <span class="contacts__text contacts__text_{{ item.ico }}">{{ item.name }}</span>
+        </li>
+    {% endif %}
+{% endfor %}

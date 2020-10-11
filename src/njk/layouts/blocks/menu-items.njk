@@ -1,15 +1,15 @@
 {% set mainMenu = [
     {
-        name: "Оплата и доставка",
+        name: 'Оплата и доставка',
         link: 'payment-delivery'
     },{
-        name: "Контакты",
+        name: 'Контакты',
         link: 'contacts'
     }
 ] %}
 
 {% for item in mainMenu %}
     <li class="menu__item{{ ' menu__item_active' if (activePage == item.link) }}">
-        <a href="/{{item.link}}/" class="menu__link">{{item.name}}</a>
+        <a href="/{{ item.link }}/" class="menu__link">{{ item.name }}</a>
     </li>
 {% endfor %}

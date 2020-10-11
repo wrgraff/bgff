@@ -1,0 +1,24 @@
+{% set catalogMenu = [
+    {
+        name: 'Комплекты для настольных игр',
+        link: 'complects'
+    },{
+        name: 'Монеты',
+        link: 'coins'
+    },{
+        name: 'Ресурсы',
+        link: 'resources'
+    },{
+        name: 'Органайзеры и планшеты',
+        link: 'organizers'
+    },{
+        name: 'Печать на заказ',
+        link: 'print'
+    }
+] %}
+
+{% for item in catalogMenu %}
+    <li class="catalog-menu__item{{ ' catalog-menu__item_active' if (activePage == item.link) }}">
+        <a href="/catalog/{{ item.link }}/" class="catalog-menu__link catalog-menu__link_{{ item.link }}">{{ item.name }}</a>
+    </li>
+{% endfor %}

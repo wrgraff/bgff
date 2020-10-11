@@ -1,0 +1,18 @@
+{% set footerMenu = [
+    {
+        name: 'Каталог',
+        link: 'catalog'
+    },{
+        name: 'Оплата и доставка',
+        link: 'payment-delivery'
+    },{
+        name: 'Контакты',
+        link: 'contacts'
+    }
+] %}
+
+{% for item in footerMenu %}
+    <li class="menu__item">
+        <a href="/{{ item.link }}/" class="menu__link">{{ item.name }}</a>
+    </li>
+{% endfor %}

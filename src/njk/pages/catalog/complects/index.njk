@@ -1,0 +1,63 @@
+{% set pageName = 'Комплекты для настольных игр' %}
+{% set title = 'Комплекты для настольных игр | BGFF' %}
+{% set description = '' %}
+{% set keywords = '' %}
+{% set activePage = 'complects' %}
+{% set breadcrumbs = [
+    {
+        name: 'Каталог',
+        link: 'catalog'
+    }
+] %}
+
+{% extends '../layouts/index.njk' %}
+
+{% block content %}
+    <h1 class="page-main__heading">{{ pageName }}</h1>
+
+    <section class="catalog-menu">
+        <h2 class="visually-hidden">Меню каталога</h2>
+
+        <ul class="catalog-menu__list">
+            {% include '../layouts/blocks/catalog-menu-items.njk' %}
+        </ul>
+    </section>
+
+    <section class="catalog-tags">
+        <h2 class="visually-hidden">Фильтры по тегам</h2>
+
+        <h3 class="catalog-tags__heading">По типу изделия</h3>
+
+        <ul class="catalog-tags__list">
+            {% set catalogTags = [
+                'Набор жетонов',
+                'Набор террейна',
+                'Набор миниатюр',
+                'Счетчики'
+            ] %}
+            {% include '../layouts/blocks/catalog-tags-items.njk' %}
+        </ul>
+
+        <h3 class="catalog-tags__heading">По игре</h3>
+
+        <ul class="catalog-tags__list">
+            {% set catalogTags = [
+                'Робинзон Крузо',
+                'Мрачная гавань',
+                'Корни',
+                'Серп',
+                'Властелин колец',
+                'Особняки безумия'
+            ] %}
+            {% include '../layouts/blocks/catalog-tags-items.njk' %}
+        </ul>
+    </section>
+    
+    <section class="catalog-cards">
+        <h2 class="visually-hidden">Список товаров</h2>
+
+        <ul class="catalog-cards__list cards">
+            {% include '../layouts/blocks/catalog-cards.njk' %}
+        </ul>
+    </section>
+{% endblock %}

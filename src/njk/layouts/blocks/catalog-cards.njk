@@ -1,0 +1,118 @@
+{% set catalogCards = [
+    {
+        name: 'Робинзон Крузо',
+        engName: 'Robinsone Crusoe',
+        type: 'Набор жетонов',
+        labels: {
+            new: true,
+            hit: false
+        },
+        price: '1100'
+    },{
+        name: 'Двери',
+        engName: '',
+        type: 'Ресурсы',
+        labels: {
+            new: true,
+            hit: false
+        },
+        price: '200'
+    },{
+        name: 'Серп',
+        engName: 'Scythe',
+        type: 'Набор миниатюр',
+        labels: {
+            new: false,
+            hit: false
+        },
+        price: '2590',
+        oldPrice: '3390'
+    },{
+        name: 'Особняки Безумия',
+        engName: 'Mansions of Madness',
+        type: 'Набор миниатюр',
+        labels: {
+            new: false,
+            hit: true
+        },
+        price: '2800'
+    },{
+        name: 'Властелин колец: Странствия в Средиземье',
+        type: 'Набор террейна',
+        labels: {
+            new: false,
+            hit: false
+        },
+        price: '3100'
+    },{
+        name: 'Корни: Речное братство',
+        engName: 'Root: The Riverfolk Expansion',
+        type: 'Набор миниатюр',
+        labels: {
+            new: false,
+            hit: false
+        },
+        price: '600'
+    },{
+        name: 'Мрачная Гавань',
+        engName: 'Gloomhaven',
+        type: 'Счетчики',
+        labels: {
+            new: false,
+            hit: false
+        },
+        price: '1000'
+    },{
+        name: 'Мрачная Гавань',
+        engName: 'Gloomhaven',
+        type: 'Набор террейна',
+        labels: {
+            new: false,
+            hit: false
+        },
+        price: '4500'
+    },{
+        name: 'Корни: Речное братство',
+        engName: 'Root: The Riverfolk Expansion',
+        type: 'Набор миниатюр',
+        labels: {
+            new: true,
+            hit: false
+        },
+        price: '1590'
+    }
+] %}
+
+{% set showedItems = 0 %}
+{% for item in catalogCards %}
+    {% if not cardsCounter or cardsCounter > showedItems %}
+        {% set showedItems = showedItems + 1 %}
+        <li class="card__item card">
+            <img src="" alt="" class="card__img">
+
+            <a href="/catalog/complects/item/" class="card__link">
+                <h3 class="card__heading">
+                    <span class="card__type">{{ item.type }}</span>
+                    {{ item.name }}
+                </h3>
+                <p class="card__eng">{{ item.engName }}</p>
+            </a>
+
+            {% if item.labels.new or item.labels.hit %}
+                <div class="card__labels labels">
+                    {% if item.labels.new %}
+                        <p class="labels__item labels__item_new">Новинка</p>
+                    {% endif %}
+                    {% if item.labels.hit %}
+                        <p class="labels__item labels__item_hit">Хит</p>
+                    {% endif %}
+                </div>
+            {% endif %}
+
+            <p class="card__price">{{ item.price }} рублей</p>
+            {% if item.oldPrice %}
+                <p class="card__price card__price_old"><span class="visually-hidden">Цена до скидки: </span>{{ item.oldPrice }} рублей</p>
+            {% endif %}
+        </li>
+    {% endif %}
+{% endfor %}

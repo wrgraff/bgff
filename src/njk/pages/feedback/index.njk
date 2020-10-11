@@ -1,5 +1,5 @@
-{% set pageName = 'Контакты' %}
-{% set title = 'Контакты | BGFF' %}
+{% set pageName = 'Обратная связь' %}
+{% set title = 'Обратная связь | BGFF' %}
 {% set description = '' %}
 {% set keywords = '' %}
 {% set activePage = 'contacts' %}
@@ -7,19 +7,9 @@
 {% extends '../layouts/index.njk' %}
 
 {% block content %}
-    <h1 class="page-main__heading">{{ pageName }}</h1>
-
-    <section class="contact-info">
-        <h2 class="visually-hidden">Ссылки на контакты</h2>
-
-        <ul class="contact-info__contacts contacts">
-            {% include '../layouts/blocks/contacts-items.njk' %}
-        </ul>
-    </section>
-
-    <section class="form-section">
+    <div class="form-section">
         <form action="/contacts/response/" class="form-section__form form">
-            <h2 class="form-section__heading form__heading">Обратная связь</h2>
+            <h1 class="form-section__heading form__heading">{{ pageName }}</h1>
 
             <label class="form__field field">
                 <p class="field__text">Имя <span class="field__comment">Обязательное поле</span></p>
@@ -49,5 +39,14 @@
 
             <button type="submit" class="form__button button">Отправить</button>
         </form>
-    </section>
+
+        <section class="form-section__aside">
+            <h2 class="visually-hidden">Контакты</h2>
+
+            <ul class="form-section__contacts contacts">
+                {% set contactsOnlyLinks = true %}
+                {% include '../layouts/blocks/contacts-items.njk' %}
+            </ul>
+        </section>
+    </div>
 {% endblock %}

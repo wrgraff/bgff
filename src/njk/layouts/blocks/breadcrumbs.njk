@@ -5,11 +5,11 @@
 
     {% for item in breadcrumbs %}
         <li class="breadcrumbs__item">
-            <a href="{{ breadcrumbs.link }}" class="breadcrumbs__link">{{ breadcrumbs.name }}</a>
+            <a href="{{ item.link }}" class="breadcrumbs__link">{{ item.name }}</a>
         </li>
     {% endfor %}
 
     <li class="breadcrumbs__item">
-        {{ name }}
+        {{ pageName }}
     </li>
 </ul>
