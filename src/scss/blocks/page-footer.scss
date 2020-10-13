@@ -1,8 +1,13 @@
 .page-footer {
-    padding: 24px 32px 32px;
     background-color: $color-blue;
 
     font-size: 18px;
+}
+
+.page-footer__wrapper {
+    max-width: $page-max-width;
+    margin: 0 auto;
+    padding: 24px 32px 32px;
 }
 
 .page-footer__logo {
