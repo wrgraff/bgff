@@ -1,0 +1,38 @@
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+
+    list-style: none;
+}
+
+.social__item {
+    & + & {
+        margin-left: 12px;
+    }
+}
+
+.social__link {
+    display: block;
+    width: 40px;
+    height: 40px;
+
+    background-color: $color-secondary;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+
+    transition: background-color 250ms;
+
+    &:hover {
+        background-color: $color-primary;
+    }
+}
+
+.social__link_vk {
+    background-image: url('../img/ico/social-vk.svg');
+}
+
+.social__link_instagram {
+    background-image: url('../img/ico/social-instagram.svg');
+}

@@ -12,6 +12,8 @@
 
 {% for item in social %}
     <li class="social__item">
-        <a href="/{{ item.link }}/" class="social__link social__link_{{ item.ico }}" target="_blank">{{ item.name }}</a>
+        <a href="/{{ item.link }}/" class="social__link social__link_{{ item.ico }}" target="_blank">
+            <span class="visually-hidden">{{ item.name }}</span>
+        </a>
     </li>
 {% endfor %}
