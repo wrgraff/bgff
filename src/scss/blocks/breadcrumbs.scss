@@ -32,11 +32,18 @@
     }
 }
 
-.breadcrumbs__link_home {
-    width: 24px;
-    height: 24px;
+.breadcrumbs__link {
+    display: block;
+}
 
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url('../img/ico/home-24px.svg');
+.breadcrumbs__ico {
+    display: block;
+
+    color: $color-black;
+
+    transition: color 250ms;
+
+    .breadcrumbs__link:hover & {
+        color: $color-primary;
+    }
 }
