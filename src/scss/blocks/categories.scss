@@ -1,0 +1,103 @@
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    padding: 0;
+
+    list-style: none;
+}
+
+.categories__item {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 16px;
+
+    background-color: $color-secondary;
+    border-radius: 20px;
+
+    transition: background-color 250ms;
+
+    &::before {
+        content: '';
+
+        width: 144px;
+        height: 144px;
+        margin-bottom: 12px;
+
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        bottom: -10px;
+        left: 10px;
+        z-index: -1;
+
+        background-color: inherit;
+        border-radius: 20px;
+        opacity: .5;
+
+        transition: background-color 250ms;
+    }
+
+    &:hover {
+        background-color: $color-primary;
+    }
+}
+
+.categories__item_coins::before {
+    background-image: url('../img/categories/ico-coins.svg');
+}
+
+.categories__item_complects::before {
+    background-image: url('../img/categories/ico-complects.svg');
+}
+
+.categories__item_organizers::before {
+    background-image: url('../img/categories/ico-organizers.svg');
+}
+
+.categories__item_print::before {
+    background-image: url('../img/categories/ico-print.svg');
+}
+
+.categories__item_resources::before {
+    background-image: url('../img/categories/ico-resources.svg');
+}
+
+.categories__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-grow: 1;
+
+    color: $color-white;
+
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+
+    &::after {
+        content: '';
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    &:hover {
+        color: $color-white;
+    }
+}

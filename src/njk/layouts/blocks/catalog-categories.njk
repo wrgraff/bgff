@@ -18,7 +18,7 @@
 ] %}
 
 {% for item in catalogCategories %}
-    <li class="categories__item">
-        <a href="/catalog/{{ item.link }}/" class="categories__link categories__link_{{ item.link }}">{{ item.name }}</a>
+    <li class="categories__item categories__item_{{ item.link }}">
+        <a href="/catalog/{{ item.link }}/" class="categories__link">{{ item.name }}</a>
     </li>
 {% endfor %}
