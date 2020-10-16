@@ -45,11 +45,56 @@
         border-radius: 20px;
         opacity: .5;
 
-        transition: background-color 250ms;
+        transition:
+            top 250ms,
+            right 250ms,
+            bottom 250ms,
+            left 250ms,
+            background-color 250ms,
+            border-radius 250ms,
+            opacity 250ms;
+        will-change: top, right, bottom, left;
     }
 
     &:hover {
         background-color: $color-primary;
+    }
+
+    &:focus-within {
+        &::after {
+            top: -4px;
+            right: -4px;
+            bottom: -4px;
+            left: -4px;
+
+            opacity: 1;
+            background-color: $color-primary;
+            border-radius: 24px;
+
+            transition:
+                top 250ms,
+                right 250ms,
+                bottom 250ms,
+                left 250ms,
+                background-color 100ms ease-in 120ms,
+                border-radius 100ms ease-in 120ms,
+                opacity 100ms ease-in 120ms;
+            will-change: top, right, bottom, left;
+        }
+    }
+
+    &:active {
+        background-color: darken($color-primary, 5%);
+
+        &::after {
+            top: 0;
+            right: 3px;
+            left: 3px;
+            bottom: -5px;
+
+            opacity: .5;
+            background-color: inherit;
+        }
     }
 }
 
@@ -99,5 +144,9 @@
 
     &:hover {
         color: $color-white;
+    }
+
+    &:focus {
+        outline: none;
     }
 }
