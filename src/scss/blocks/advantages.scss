@@ -1,0 +1,38 @@
+.advantages {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.advantages__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    counter-reset: 'advantages';
+}
+
+.advantages__item {
+    position: relative;
+    counter-increment: advantages;
+
+    padding: 42px 0 0 20px;
+
+    &::before {
+        content: '0' counter(advantages);
+        position: absolute;
+        top: 0;
+        left: 4px;
+        z-index: -1;
+
+        color: $color-primary;
+        opacity: .7;
+
+        font-size: 64px;
+        font-weight: 800;
+        line-height: 1;
+    }
+}

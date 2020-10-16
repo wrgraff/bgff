@@ -14,4 +14,8 @@
     max-width: $page-max-width;
     margin: 0 auto;
     padding: 0 32px;
+
+    & + & {
+        margin-top: 64px;
+    }
 }
