@@ -53,6 +53,7 @@
             bottom 250ms,
             left 250ms,
             background-color 250ms,
+            border-radius 250ms,
             opacity 250ms;
         will-change: top, right, bottom, left;
     }
@@ -77,6 +78,7 @@
 
             opacity: 1;
             background-color: $color-primary;
+            border-radius: 6px;
 
             transition:
                 top 250ms,
@@ -84,6 +86,7 @@
                 bottom 250ms,
                 left 250ms,
                 background-color 100ms ease-in 120ms,
+                border-radius 100ms ease-in 120ms,
                 opacity 100ms ease-in 120ms;
             will-change: top, right, bottom, left;
         }

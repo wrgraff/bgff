@@ -1,0 +1,25 @@
+.labels {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.labels__item {
+    padding: 2px 8px 1px;
+
+    color: $color-white;
+    background-color: $color-black;
+    border-radius: 2px;
+
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+.labels__item_new {
+    background-color: $color-orange;
+}
+
+.labels__item_hit {
+    background-color: $color-secondary;
+}

@@ -88,7 +88,7 @@
     {% if not cardsCounter or cardsCounter > showedItems %}
         {% set showedItems = showedItems + 1 %}
         <li class="card__item card">
-            <img src="" alt="" class="card__img">
+            <img src="https://via.placeholder.com/272x180" alt="" class="card__img">
 
             <a href="/catalog/complects/item/" class="card__link">
                 <h3 class="card__heading">
@@ -109,9 +109,12 @@
                 </div>
             {% endif %}
 
-            <p class="card__price">{{ item.price }} рублей</p>
+            <p class="card__price">
+                {{ item.price }}
+                <span class="visually-hidden">рублей</span>
+            </p>
             {% if item.oldPrice %}
-                <p class="card__price card__price_old"><span class="visually-hidden">Цена до скидки: </span>{{ item.oldPrice }} рублей</p>
+                <p class="card__price card__price_old"><span class="visually-hidden">Цена до скидки: </span>{{ item.oldPrice }} <span class="visually-hidden">рублей</span></p>
             {% endif %}
         </li>
     {% endif %}

@@ -1,0 +1,170 @@
+.card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 24px;
+
+    background-color: $color-cream;
+    border-radius: 20px;
+
+    transition: background-color 250ms;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 10px;
+        bottom: -10px;
+        left: 10px;
+        z-index: -1;
+
+        background-color: inherit;
+        border-radius: 20px;
+        opacity: .5;
+
+        transition:
+            top 250ms,
+            right 250ms,
+            bottom 250ms,
+            left 250ms,
+            background-color 250ms,
+            border-radius 250ms,
+            opacity 250ms;
+        will-change: top, right, bottom, left;
+    }
+
+    &:hover {
+        background-color: $color-orange;
+    }
+
+    &:focus-within {
+        outline: none;
+
+        &::after {
+            top: -4px;
+            right: -4px;
+            bottom: -4px;
+            left: -4px;
+
+            opacity: 1;
+            background-color: $color-primary;
+            border-radius: 24px;
+
+            transition:
+                top 250ms,
+                right 250ms,
+                bottom 250ms,
+                left 250ms,
+                background-color 100ms ease-in 120ms,
+                border-radius 100ms ease-in 120ms,
+                opacity 100ms ease-in 120ms;
+            will-change: top, right, bottom, left;
+        }
+    }
+
+    &:active {
+        background-color: darken($color-cream, 5%);
+
+        &::after {
+            top: 0;
+            right: 3px;
+            left: 3px;
+            bottom: -5px;
+
+            opacity: .5;
+            background-color: inherit;
+        }
+    }
+}
+
+.card__img {
+    object-fit: cover;
+    height: 180px;
+    margin-bottom: 36px;
+
+    border-radius: 20px 20px 0 0;
+
+    transition: opacity 250ms;
+
+    .card:hover & {
+        opacity: .8;
+    }
+}
+
+.card__link {
+    display: block;
+    padding: 0 24px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.card__heading {
+    margin: 0 0 2px;
+
+    color: $color-secondary;
+
+    font-size: 19px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+.card__type {
+    display: block;
+    margin-bottom: 4px;
+
+    opacity: .6;
+
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.card__eng {
+    margin: 0;
+
+    color: $color-secondary;
+
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+.card__labels {
+    position: absolute;
+    top: -12px;
+    left: 24px;
+}
+
+.card__price {
+    position: absolute;
+    top: 163px;
+    left: 24px;
+
+    padding: 4px 16px 3px;
+
+    color: $color-white;
+    background-color: $color-primary;
+    border-radius: 5px;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    &::after {
+        content: '₽';
+    }
+}
