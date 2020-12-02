@@ -1,5 +1,4 @@
 .page-header {
-    padding: 24px 32px 32px;
     background-color: $color-blue;
 
     text-align: center;
@@ -8,16 +7,18 @@
 .page-header__nav {
     max-width: $page-max-width;
     margin: 0 auto;
+    padding: 24px 32px 32px;
 
     @include breakpoint(medium) {
         display: grid;
-        grid-template-columns: min-content 1fr;
+        grid-template-columns: minmax(max-content, 2fr) 6fr;
         column-gap: 32px;
         row-gap: 16px;
     }
 
     @include breakpoint(large) {
-        grid-template-columns: min-content 1fr min-content;
+        grid-template-columns: minmax(max-content, 2fr) 5fr minmax(min-content, 1fr);
+        padding-top: 32px;
     }
 }
 
@@ -28,7 +29,7 @@
 
     @include breakpoint(medium) {
         grid-row: span 2;
-        margin: auto 0;
+        margin: auto -8px;
     }
 
     @include breakpoint(large) {
