@@ -8,14 +8,45 @@
 .page-header__nav {
     max-width: $page-max-width;
     margin: 0 auto;
+
+    @include breakpoint(medium) {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        column-gap: 32px;
+        row-gap: 16px;
+    }
+
+    @include breakpoint(large) {
+        grid-template-columns: min-content 1fr min-content;
+    }
 }
 
 .page-header__logo {
     display: block;
     width: 240px;
     margin: 0 auto 16px;
+
+    @include breakpoint(medium) {
+        grid-row: span 2;
+        margin: auto 0;
+    }
+
+    @include breakpoint(large) {
+        grid-row: auto;
+    }
 }
 
 .page-header__menu {
     margin: 0 0 24px;
+
+    @include breakpoint(medium) {
+        margin: auto 0;
+        margin-right: -8px;
+    }
+}
+
+.page-header__order {
+    @include breakpoint(medium) {
+        margin: auto 0 auto auto;
+    }
 }

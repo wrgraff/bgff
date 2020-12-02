@@ -3,6 +3,11 @@
     list-style: none;
 
     font-size: 18px;
+
+    @include breakpoint(medium) {
+        display: flex;
+        justify-content: flex-end;
+    }
 }
 
 .menu__link {
