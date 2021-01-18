@@ -1,0 +1,27 @@
+{% set pageName = '404' %}
+{% set title = 'Страница не найдена | BGFF' %}
+{% set description = '' %}
+{% set keywords = '' %}
+{% set activePage = '404' %}
+
+{% extends '../layouts/index.njk' %}
+
+{% block content %}
+    <h1 class="page-main__heading">Страница не найдена</h1>
+
+    <div class="page-main__section">
+        <p>Страница не найдена: возможно, она была удалена или набран неправильный адрес.</p>
+        <p>Вы можете <a href="/feedback/">связаться с нами через форму обратной связи</a>, или же перейти на одну из страниц нашего сайта, которые точно существуют:</p>
+        <ul class="site-pages">
+            <li class="site-pages__item">
+                <a href="/" class="site-pages__link">Главная</a>
+            </li>
+            <li class="site-pages__item">
+                <a href="/catalog/" class="site-pages__link">Каталог</a>
+            </li>
+            <li class="site-pages__item">
+                <a href="/contacts/" class="site-pages__link">Контакты</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
