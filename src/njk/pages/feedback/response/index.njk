@@ -1,0 +1,33 @@
+{% set pageName = 'Сообщение успешно отправлено!' %}
+{% set title = 'Отчет об отправке | BGFF' %}
+{% set description = '' %}
+{% set keywords = '' %}
+{% set activePage = 'contacts/response' %}
+{% set breadcrumbs = [
+    {
+        name: 'Обратная связь',
+        link: '/feedback'
+    }
+] %}
+
+{% extends '../layouts/index.njk' %}
+
+{% block content %}
+    <h1 class="page-main__heading">{{ pageName }}</h1>
+
+    <section class="page-main__section">
+        <p>Благодарим Вас за обращение. В ближайшее время мы свяжемся с Вами и предоставим необходимую информацию.</p>
+        <a href="/catalog/" class="button primary">Перейти в каталог</a>
+        <a href="/" class="button">На главную</a>
+    </section>
+
+    <section class="page-main__section">
+        <h2 class="visually-hidden">Ссылки на контакты</h2>
+
+        <p>А еще Вы всегда можете нам позвонить или написать на почту:</p>
+
+        <ul class="contact-info__contacts contacts">
+            {% include '../layouts/blocks/contacts-items.njk' %}
+        </ul>
+    </section>
+{% endblock %}
